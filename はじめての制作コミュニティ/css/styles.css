@@ -1,0 +1,322 @@
+body {
+  background:#333;
+  color:#fff;
+  margin:0;
+}
+
+header {
+  max-width: 1100px;
+}
+
+
+section {
+  background:grey;
+}
+
+.section-menu {
+  font-size: 40px;
+}
+
+h1.section-menu::before{
+  content: '-';
+}
+
+h1.section-menu::after{
+  content: '-';
+}
+
+h1,h2,h3 {
+  text-align: center;
+  font-weight: normal;
+  margin: 0 0 60px;
+}
+
+p {
+  text-align: center;
+  line-height: 2;
+  font-size: 20px;
+}
+
+footer {
+  text-align: center;
+
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+#home {
+  background-image: url(../flower/IMG-7376.jpg);
+  min-height: 50vh;
+}
+
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+#menu {
+  position: absolute;  /* ブラウザの左上を起点にする。 */
+  top: 0;
+  left: 0;
+  right: 0;
+  background:#fff;
+  color: black;
+  display: none;
+}
+
+#menu.shown {
+  display: block;  /* menuを表示。*/
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;  /* 上下：10px 左右：20px */
+}
+
+#menu li {
+  line-height:2;
+}
+
+#menu li :hover {
+  background: #0090aa;
+}
+
+#menu a {
+  text-decoration: none;  /* リンクボタンの下線を消す。*/
+  color: inherit;  /* 文字色を親要素(#menu)から引き継ぐ。*/
+}
+
+
+
+#open_menu {
+  float:right;  /* 右寄せ */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#close_menu {
+  padding: 15px;
+  float: right;  /* 右寄せ */
+  cursor: pointer;
+}
+
+.home-content {
+  margin-top:10%;
+}
+
+.home-content p {
+  margin: 10px 0 42px;
+}
+
+#About img {
+  width: 70%;
+  height: 30%;
+}
+
+
+/* 商品説明 */
+.section-title{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.products {
+  padding: 60px 0;
+}
+
+.product img {
+  width: 70%;
+  height: 30%;
+  padding-bottom: 50px;
+}
+
+
+.product:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+/* ギャラリー */
+#Gallery {
+  width: 80%;
+  margin: 16px auto;
+}
+.container-1 {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-1 ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  transform: .1s;
+}
+
+.container-1 li{
+  height: 100%;
+  min-width: 100%;
+}
+
+.container-1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#prev,
+#next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: grey;
+  color: #fff;
+  font-size: 30px;
+  padding: 0 8px 4px;
+  cursor: pointer;
+}
+
+#prev:hover,
+#next:hover {
+  opacity: .6;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#GalleryNav {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#GalleryNav button + button {
+  margin-left: 10px;
+}
+
+#GalleryNav button{
+  border: none;
+  width: 16px;
+  height: 16px;
+  color:grey;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#GalleryNav .current{
+  background: #999;
+}
+
+/* アクセス部分 */
+#Access img {
+  width: 60%;
+  height: 30%;
+}
+
+
+/*フッター部分 */
+
+.footer-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-menu a {
+  text-decoration: none;
+}
+
+.footer-menu img {
+  width: 40%;
+  height: 30%;
+}
+
+
+@media (min-width:550px) {
+  .product img {
+    width: 50%;
+    height: 5%;
+  }
+
+  .product p {
+    width: 45%;
+  }
+
+  .product:nth-of-type(odd) p {
+    float: right;
+    padding-left: 5%;
+  }
+
+  .product:nth-of-type(even) p {
+    float: left;
+    padding-right: 5%;
+  }
+
+  .product {
+    overflow: hidden;
+  }
+
+}
+
+
+
+
+
+@media (min-width:900px) {  /* ブラウザ幅900px以上になったら下記のスタイリングに */
+  /* .container {
+    width: 820px;  
+  } */
+
+  #open_menu {
+    display: none;  /* 非表示 */
+  }
+
+  #close_menu {
+    display: none;  /* 非表示 */
+  }
+/*  */
+  #menu {
+    display: block;  /* 表示 */
+    position: static;  /* 固定配置でなく、デフォルト値に変更。 */
+    background: transparent;  /*背景色透明に。 */
+    color:#fff;
+  }
+ 
+  #menu ul {
+    padding: 0;
+    float:right;
+  }
+
+  #menu li {
+    display: inline-block;    /* 各liが横並びに */
+    width: 60px;
+    text-align: center;
+  }
+
+  .container-1 img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
